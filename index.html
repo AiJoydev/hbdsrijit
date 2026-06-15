@@ -412,6 +412,19 @@
             font-size: 25px;
          }
       }
+
+      #loader {
+         position: fixed;
+         inset: 0;
+         background: #120c08;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         font-size: 30px;
+         color: gold;
+         z-index: 9999;
+      }
    </style>
 </head>
 
@@ -439,7 +452,11 @@
          document.body.appendChild(bean);
       }
    </script>
-
+   <div id="loader">
+      ☕👑 Welcome to King Srijit's Birthday 🎂
+      <br><br>
+      Tap Anywhere to Enter
+   </div>
    <div class="hero">
       <div class="crown">👑</div>
 
@@ -656,6 +673,13 @@
    </footer>
 
    <script>
+      const loader = document.getElementById('loader');
+      const music = document.getElementById('music');
+
+      loader.addEventListener('click', () => {
+         music.play();
+         loader.style.display = 'none';
+      });
       const cursor = document.querySelector(".cursor");
 
       document.addEventListener("mousemove", e => {
